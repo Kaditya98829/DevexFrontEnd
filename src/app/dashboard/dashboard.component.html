@@ -1,0 +1,36 @@
+
+
+<table style="width:100%" *ngIf="!isFormUpdated">
+ <ng-container *ngIf="usersList.length">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th colspan="2">Action</th>
+      </tr>
+   <tr *ngFor="let user of usersList; let i = index">
+   <td>{{user.name}}</td>
+   <td>{{user.email}}</td>
+   <td><button (click)="deleteUser($event, i)">Delete</button></td>
+   <td><button (click)="getIndex($event,i); isFormUpdated = !isFormUpdated">Update</button></td>
+  </tr>
+ </ng-container>
+  </table>
+  <form *ngIf="isFormUpdated">
+    <div class="container">
+      <h1>Update</h1>
+      <hr>
+      <label for="name"><b>Name</b></label>
+      <input type="text" [(ngModel)] ="registerUser.name" placeholder="Enter name" name="name" id="name" required>
+
+      <label for="email"><b>Email</b></label>
+      <input type="text" [(ngModel)] ="registerUser.email" placeholder="Enter Email" name="email" id="email" required>
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" [(ngModel)] ="registerUser.password" placeholder="Enter Password" name="psw" id="psw" required>
+  
+      <button type="submit" class="registerbtn" (click)="update();isFormUpdated = !isFormUpdated">Register</button>
+    </div>
+
+  </form>
+
+<p *ngIf="usersList.length===0">No data found please register</p>

@@ -1,0 +1,17 @@
+<form>
+    <div class="container">
+      <h1>Register</h1>
+      <hr>
+      <label for="name"><b>Name</b></label>
+      <input type="text" [(ngModel)] ="registerUser.name" placeholder="Enter name" name="name" id="name" required>
+
+      <label for="email"><b>Email</b></label>
+      <input type="text" [(ngModel)] ="registerUser.email" placeholder="Enter Email" name="email" id="email" required>
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" [(ngModel)] ="registerUser.password" placeholder="Enter Password" name="psw" id="psw" required>
+  
+      <button type="submit" class="registerbtn" (click)="register()">Register</button>
+    </div>
+
+  </form>
