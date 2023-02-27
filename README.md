@@ -4,4 +4,4 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `npm run startApp` to run app
+Run `npm run startApp or ng serve --proxy-config proxy.conf.json` to run app
